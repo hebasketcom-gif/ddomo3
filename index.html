@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DentPulse Academy - Healthcare & Dental Intelligence</title>
+  <meta name="description" content="Empowering clinicians, dental groups, and radiologic teams with FDA-cleared diagnostic AI, operatory automation, and accredited CE courses.">
+  <meta property="og:title" content="DentPulse Academy - Healthcare & Dental Intelligence">
+  <meta property="og:description" content="Next-generation dental AI suite and clinician academy for real-time pathology detection and operatory intelligence.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandNavy: '#0B132B',
+            brandDarkSurface: '#121D3F',
+            brandCardDark: '#1A2750',
+            brandYellow: '#FDE047',
+            brandYellowHover: '#EAB308',
+            brandCyan: '#38BDF8',
+            brandSlate: '#F8FAFC',
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04)',
+            'card': '0 12px 32px -4px rgba(11, 19, 43, 0.08)',
+            'float': '0 20px 40px -10px rgba(0, 0, 0, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      overflow-x: hidden;
+      background-color: #FAFAFB;
+      color: #1E293B;
+    }
+    .custom-card-radius {
+      border-radius: 12px;
+    }
+    .glow-yellow {
+      box-shadow: 0 0 25px rgba(253, 224, 71, 0.45);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen text-slate-800 antialiased selection:bg-yellow-300 selection:text-slate-900">
+
+  <!-- 1. STICKY NAVBAR -->
+  <header class="sticky top-0 z-40 w-full bg-[#0B132B]/95 backdrop-blur-md border-b border-slate-800/80 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 rounded-lg">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-yellow-400 to-yellow-200 flex items-center justify-center text-[#0B132B] shadow-md group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h1v3c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-3h1c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7zm0 2c2.76 0 5 2.24 5 5 0 1.63-.8 3.06-2.02 3.94l-.98.71V16h-4v-2.35l-.98-.71C7.8 12.06 7 10.63 7 9c0-2.76 2.24-5 5-5z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+            DentPulse <span class="text-[#FDE047] font-semibold text-sm px-2 py-0.5 rounded bg-yellow-400/10 border border-yellow-400/20">Academy</span>
+          </span>
+          <p class="text-[11px] text-slate-400 tracking-wide">Healthcare & Dental Intelligence</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#clinical-solutions" class="hover:text-yellow-300 transition-colors">Clinical Solutions</a>
+        <a href="#raas-platform" class="hover:text-yellow-300 transition-colors">RaaS Platform</a>
+        <a href="#academy-ce" class="hover:text-yellow-300 transition-colors">Academy & CE</a>
+        <a href="#practice-roi" class="hover:text-yellow-300 transition-colors">Practice ROI</a>
+        <a href="#faq" class="hover:text-yellow-300 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button onclick="openDemoModal()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-bold text-sm bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap cursor-pointer">
+          <span>Book Demo</span>
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburgerIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Nav -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#0B132B] border-b border-slate-800 px-6 py-5 space-y-4">
+      <a href="#clinical-solutions" class="block text-slate-200 hover:text-yellow-400 font-medium py-1">Clinical Solutions</a>
+      <a href="#raas-platform" class="block text-slate-200 hover:text-yellow-400 font-medium py-1">RaaS Platform</a>
+      <a href="#academy-ce" class="block text-slate-200 hover:text-yellow-400 font-medium py-1">Academy & CE</a>
+      <a href="#practice-roi" class="block text-slate-200 hover:text-yellow-400 font-medium py-1">Practice ROI</a>
+      <a href="#faq" class="block text-slate-200 hover:text-yellow-400 font-medium py-1">FAQ</a>
+      <div class="pt-3 border-t border-slate-800">
+        <button onclick="openDemoModal()" class="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-bold bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B]">
+          Book Demo ->
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="relative bg-[#0B132B] text-white pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+    <!-- Subtle Background Ambient Grid & Glow -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(rgba(253, 224, 71, 0.25) 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute top-1/4 -left-48 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Content Column -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-semibold text-yellow-300">
+            <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+            FDA-Cleared Algorithms · ADA CERP Provider
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Healthcare & Dental <br class="hidden sm:inline">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-200 to-amber-400">Intelligence Academy</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed">
+            Empowering clinicians, dental groups, and radiologic specialists with real-time diagnostic AI models, autonomous operatory workflows, and accredited clinical education.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <button onclick="openDemoModal()" class="px-8 py-4 rounded-xl font-bold text-base bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 cursor-pointer flex items-center justify-center gap-2">
+              <span>Book Academy Demo</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </button>
+
+            <a href="#clinical-solutions" class="px-8 py-4 rounded-xl font-semibold text-base text-white border-2 border-slate-600 hover:border-yellow-400 hover:text-yellow-300 hover:bg-white/5 transition-all text-center flex items-center justify-center gap-2">
+              <span>Explore Software Suite</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Trust Badges & Clinical Metrics -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 text-slate-300">
+            <div>
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-white">99.4%</div>
+              <div class="text-xs text-slate-400 mt-0.5">Diagnostic Accuracy</div>
+            </div>
+            <div>
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-yellow-300">&lt; 1.2s</div>
+              <div class="text-xs text-slate-400 mt-0.5">CBCT & 2D Inference</div>
+            </div>
+            <div>
+              <div class="text-2xl lg:text-3xl font-bold font-mono text-white">18 CE</div>
+              <div class="text-xs text-slate-400 mt-0.5">Accredited Credits</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Column: Floating Tech-Style UI Cards -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Hero Dashboard Preview Card -->
+          <div class="bg-[#121D3F] border border-slate-700/80 rounded-2xl p-5 shadow-2xl relative">
+            
+            <!-- Card Header -->
+            <div class="flex items-center justify-between border-b border-slate-700/60 pb-3 mb-4">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-400"></div>
+                <span class="text-xs font-mono text-slate-400 ml-2">DentPulse AI Engine v4.2</span>
+              </div>
+              <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> Live PACS Stream
+              </span>
+            </div>
+
+            <!-- Simulated Radiograph with AI Bounding Boxes -->
+            <div class="relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800 aspect-video mb-4">
+              <img 
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" 
+                alt="AI Dental Radiograph Analysis" 
+                referrerpolicy="no-referrer"
+                class="w-full h-full object-cover opacity-80"
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0B132B] via-transparent to-transparent"></div>
+              
+              <!-- Overlaid AI Diagnostics Box 1 -->
+              <div class="absolute top-1/4 left-1/3 border-2 border-yellow-400 bg-yellow-400/20 rounded p-1.5 backdrop-blur-xs animate-pulse">
+                <div class="text-[10px] font-mono bg-[#0B132B] text-yellow-300 font-bold px-1 rounded shadow">
+                  Interproximal Caries #14 (98.7%)
+                </div>
+              </div>
+
+              <!-- Overlaid AI Diagnostics Box 2 -->
+              <div class="absolute bottom-1/4 right-1/4 border-2 border-cyan-400 bg-cyan-400/20 rounded p-1.5 backdrop-blur-xs">
+                <div class="text-[10px] font-mono bg-[#0B132B] text-cyan-300 font-bold px-1 rounded shadow">
+                  Crestal Bone Loss: 2.8mm
+                </div>
+              </div>
+            </div>
+
+            <!-- Micro Metrics Inside Card -->
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="bg-[#1A2750] p-2.5 rounded-lg border border-slate-700/60">
+                <span class="text-slate-400 block text-[11px]">Chairside Time Saved</span>
+                <span class="text-white font-mono font-bold text-sm">42 mins / day</span>
+              </div>
+              <div class="bg-[#1A2750] p-2.5 rounded-lg border border-slate-700/60">
+                <span class="text-slate-400 block text-[11px]">Acceptance Rate</span>
+                <span class="text-yellow-300 font-mono font-bold text-sm">+34.8% Treatment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Tech Card 1: Caries & Bone Loss -->
+          <div class="absolute -top-6 -right-4 sm:-right-6 bg-[#0B132B] border border-yellow-400/40 p-3.5 rounded-xl shadow-2xl backdrop-blur-md transform hover:scale-105 transition-transform duration-300 hidden sm:flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-yellow-400/20 flex items-center justify-center text-yellow-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">DentVision Neural Scan</div>
+              <div class="text-[11px] text-yellow-300 font-mono">0.12s Radiograph Triage</div>
+            </div>
+          </div>
+
+          <!-- Floating Tech Card 2: Voice Operatory Sync -->
+          <div class="absolute -bottom-6 -left-4 sm:-left-6 bg-[#0B132B] border border-cyan-400/40 p-3.5 rounded-xl shadow-2xl backdrop-blur-md transform hover:scale-105 transition-transform duration-300 hidden sm:flex items-center gap-3">
+            <div class="w-9 h-9 rounded-lg bg-cyan-400/20 flex items-center justify-center text-cyan-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">DentFlow Ambient Voice</div>
+              <div class="text-[11px] text-cyan-300 font-mono">Auto-EHR Charting Active</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. THREE-COLUMN FEATURE GRID -->
+  <section id="clinical-solutions" class="py-20 lg:py-28 bg-[#FAFAFB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-wider uppercase text-blue-900 bg-blue-100/80 px-3 py-1 rounded-full">
+          Intelligent Clinical Arsenal
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B132B] mt-4 tracking-tight">
+          Precision AI Built for Modern Dental Practices
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 mt-3">
+          Deploy deep-learning engines directly inside your imaging software, operatory chairs, and orthodontic suites with zero friction.
+        </p>
+      </div>
+
+      <!-- 3-Column White Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: DentVision Radiology AI -->
+        <div class="bg-white border border-slate-200/90 custom-card-radius shadow-card hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
+          <!-- Image Top -->
+          <div class="relative h-56 w-full overflow-hidden bg-slate-900">
+            <img 
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" 
+              alt="DentVision Radiology AI"
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-[#0B132B]/90 text-yellow-300 border border-yellow-400/30 text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold backdrop-blur-xs">
+                Radiology Intelligence
+              </span>
+            </div>
+            <div class="absolute bottom-3 right-3">
+              <span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded shadow">
+                99.1% Sensitivity
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-[#0B132B] group-hover:text-blue-900 transition-colors">
+                DentVision Radiology AI
+              </h3>
+              <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+                Automated detection of incipient caries, periapical lesions, margin discrepancies, and alveolar bone loss on 2D bitewings, PAs, and 3D CBCT scans in under 1.2 seconds.
+              </p>
+
+              <!-- Feature Highlights -->
+              <ul class="mt-5 space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Real-time color-coded pathology segmentation</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Seamless Dexis, Carestream & Sirona PACS plug-in</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>FDA 510(k) cleared diagnostic assistant</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Action Button -->
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+              <button onclick="openDemoModal('DentVision Radiology AI')" class="text-xs font-bold text-[#0B132B] hover:text-blue-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Request Clinical Trial</span>
+                <span class="text-yellow-500 font-bold">&rarr;</span>
+              </button>
+              <span class="text-[11px] font-mono text-slate-400">HIPAA Compliant</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2: DentFlow Operatory AI -->
+        <div class="bg-white border border-slate-200/90 custom-card-radius shadow-card hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
+          <!-- Image Top -->
+          <div class="relative h-56 w-full overflow-hidden bg-slate-900">
+            <img 
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80" 
+              alt="DentFlow Operatory AI"
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-[#0B132B]/90 text-yellow-300 border border-yellow-400/30 text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold backdrop-blur-xs">
+                Chairside Automation
+              </span>
+            </div>
+            <div class="absolute bottom-3 right-3">
+              <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded shadow">
+                42 Min Saved / Day
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-[#0B132B] group-hover:text-blue-900 transition-colors">
+                DentFlow Operatory AI
+              </h3>
+              <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+                Ambient clinical voice recognition that records periodontal probings, generates SOAP notes, and auto-populates treatment plans in Dentrix, Eaglesoft, and Curve.
+              </p>
+
+              <!-- Feature Highlights -->
+              <ul class="mt-5 space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Hands-free voice periodontal depth charting</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Automated claim narrative & pre-auth generation</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Zero-click clinical discharge summary</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Action Button -->
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+              <button onclick="openDemoModal('DentFlow Operatory AI')" class="text-xs font-bold text-[#0B132B] hover:text-blue-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Request Operatory Demo</span>
+                <span class="text-yellow-500 font-bold">&rarr;</span>
+              </button>
+              <span class="text-[11px] font-mono text-slate-400">SOC2 Type II</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3: CephaloMetric-AI Suite -->
+        <div class="bg-white border border-slate-200/90 custom-card-radius shadow-card hover:shadow-2xl transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1">
+          <!-- Image Top -->
+          <div class="relative h-56 w-full overflow-hidden bg-slate-900">
+            <img 
+              src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80" 
+              alt="CephaloMetric-AI Suite"
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80';"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-[#0B132B]/90 text-yellow-300 border border-yellow-400/30 text-[11px] font-mono px-2.5 py-1 rounded-md font-semibold backdrop-blur-xs">
+                Orthodontic AI
+              </span>
+            </div>
+            <div class="absolute bottom-3 right-3">
+              <span class="bg-purple-600 text-white text-xs font-bold px-2 py-0.5 rounded shadow">
+                64 Anatomical Landmarks
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Body -->
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-bold text-[#0B132B] group-hover:text-blue-900 transition-colors">
+                CephaloMetric-AI Suite
+              </h3>
+              <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
+                Instant tracing of lateral cephalograms, automated Steiner, Tweed, and McNamara analyses, volumetric airway modeling, and clear aligner outcome forecasting.
+              </p>
+
+              <!-- Feature Highlights -->
+              <ul class="mt-5 space-y-2.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Sub-second lateral and frontal ceph landmarking</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Pharyngeal airway volume segmentation</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                  <span>Export to Dolphin, 3Shape & OnyxCeph</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Card Action Button -->
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+              <button onclick="openDemoModal('CephaloMetric-AI Suite')" class="text-xs font-bold text-[#0B132B] hover:text-blue-700 flex items-center gap-1 group-hover:gap-2 transition-all">
+                <span>Explore Ceph Module</span>
+                <span class="text-yellow-500 font-bold">&rarr;</span>
+              </button>
+              <span class="text-[11px] font-mono text-slate-400">DICOM 3.0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. RaaS (Radiology-as-a-Service) & INTERACTIVE SIMULATOR -->
+  <section id="raas-platform" class="py-20 bg-[#0B132B] text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Info Column -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold tracking-wider uppercase text-yellow-300 bg-yellow-400/10 border border-yellow-400/20 px-3 py-1 rounded-full">
+            RaaS Enterprise Platform
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Radiology as a Service: Instant Second Opinions 24/7
+          </h2>
+          <p class="text-slate-300 text-base leading-relaxed">
+            Eliminate diagnostic uncertainty. Every radiograph captured in your clinic is automatically analyzed by DentPulse RaaS, returning annotated findings and board-certified radiologist verification when requested.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-yellow-400/20 text-yellow-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Sub-Second Triaging</h4>
+                <p class="text-xs text-slate-400">Dentists and hygienists view highlighted radiolucencies on patient screens within 1.2 seconds of sensor exposure.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-cyan-400/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Objective Patient Trust</h4>
+                <p class="text-xs text-slate-400">Patients easily understand visual AI bounding boxes, driving +34.8% case acceptance without high-pressure sales.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button onclick="openDemoModal('RaaS Platform')" class="px-6 py-3 rounded-lg font-bold text-sm bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] shadow-md transition-all">
+              Connect Your Practice PACS
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive AI Radiograph Before/After Simulator -->
+        <div class="lg:col-span-6 bg-[#121D3F] border border-slate-700 p-6 rounded-2xl shadow-2xl">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <span class="text-xs font-mono text-yellow-300 font-semibold uppercase">Interactive Demo</span>
+              <h3 class="text-lg font-bold text-white">Live AI Pathology Detection</h3>
+            </div>
+            <!-- Toggle Button -->
+            <button id="toggleAiScanBtn" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-[#FDE047] text-[#0B132B] hover:bg-yellow-300 transition-colors shadow">
+              Toggle AI Layer
+            </button>
+          </div>
+
+          <!-- Radiograph Container -->
+          <div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-black border border-slate-700">
+            <img 
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" 
+              alt="Live Dental Radiograph"
+              referrerpolicy="no-referrer"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80';"
+            />
+
+            <!-- Overlaid AI Heatmap & Markings (Toggled via JS) -->
+            <div id="aiOverlayLayer" class="absolute inset-0 bg-yellow-400/5 transition-opacity duration-300">
+              <!-- Bounding Box 1 -->
+              <div class="absolute top-[28%] left-[22%] w-[26%] h-[28%] border-2 border-yellow-400 bg-yellow-400/25 rounded p-1">
+                <span class="text-[9px] font-mono font-bold bg-[#0B132B] text-yellow-300 px-1 py-0.5 rounded shadow">
+                  Caries D2 (99.2%)
+                </span>
+              </div>
+              <!-- Bounding Box 2: Bone loss -->
+              <div class="absolute bottom-[24%] right-[20%] w-[32%] h-[24%] border-2 border-cyan-400 bg-cyan-400/25 rounded p-1">
+                <span class="text-[9px] font-mono font-bold bg-[#0B132B] text-cyan-300 px-1 py-0.5 rounded shadow">
+                  Horizontal Bone Loss 3.1mm
+                </span>
+              </div>
+              <!-- Periapical lesion -->
+              <div class="absolute bottom-[10%] left-[26%] w-[18%] h-[20%] border-2 border-red-400 bg-red-400/25 rounded-full p-1">
+                <span class="text-[9px] font-mono font-bold bg-[#0B132B] text-red-300 px-1 py-0.5 rounded shadow">
+                  PA Radiolucency
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Diagnostic Log Box -->
+          <div class="mt-4 p-3 bg-[#0B132B] rounded-lg border border-slate-700/80 font-mono text-xs text-slate-300 space-y-1">
+            <div class="flex justify-between text-slate-400">
+              <span>SCAN #DP-89104</span>
+              <span id="aiScanStatus" class="text-emerald-400 font-bold">AI Active · 3 Findings Flagged</span>
+            </div>
+            <div class="text-[11px] text-slate-400 truncate">Tooth #19: Mesial coronal dentin involvement (depth: 1.4mm). Tooth #20: Mild furcation bone margin reduction.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. ACADEMY & CE SECTION -->
+  <section id="academy-ce" class="py-20 lg:py-28 bg-[#FAFAFB]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-wider uppercase text-blue-900 bg-blue-100 px-3 py-1 rounded-full">
+          Accredited Clinical Curriculum
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B132B] mt-4 tracking-tight">
+          Master Dental Intelligence with ADA CERP Credits
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 mt-3">
+          Designed by leading radiologic professors and DSO clinical directors. Learn to deploy, audit, and ethically communicate AI findings.
+        </p>
+      </div>
+
+      <!-- CE Course Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Course 1 -->
+        <div class="bg-white p-7 custom-card-radius shadow-card border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span>TRACK 01</span>
+              <span class="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">6 CE Credits</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#0B132B]">AI Radiographic Interpretation & Pathology Auditing</h3>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Deep dive into false positive vs. false negative rates, borderline lesion monitoring, and legal documentation with AI bounding overlays.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-900">$295 · Self-Paced</span>
+            <button onclick="openDemoModal('AI Radiographic Course')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#FDE047] hover:bg-yellow-300 text-[#0B132B]">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="bg-white p-7 custom-card-radius shadow-card border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span>TRACK 02</span>
+              <span class="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">8 CE Credits</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#0B132B]">Ambient Operatory Voice & Autonomous EHR Sync</h3>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Train dental assistants and hygienists to leverage ambient clinical voice bots, reducing burnout and eliminating unbilled procedures.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-900">$340 · Hybrid</span>
+            <button onclick="openDemoModal('Operatory Voice Course')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#FDE047] hover:bg-yellow-300 text-[#0B132B]">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="bg-white p-7 custom-card-radius shadow-card border border-slate-200 flex flex-col justify-between hover:shadow-xl transition-all">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-500 mb-3">
+              <span>TRACK 03</span>
+              <span class="font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">12 CE Credits</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#0B132B]">Fellowship in Clinical Dental Intelligence (FCDI)</h3>
+            <p class="text-xs text-slate-600 mt-3 leading-relaxed">
+              Comprehensive executive credential for practice owners and group leaders navigating AI integration, regulatory compliance, and patient communication.
+            </p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-900">$980 · Full Fellow</span>
+            <button onclick="openDemoModal('Fellowship Program')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-[#FDE047] hover:bg-yellow-300 text-[#0B132B]">
+              Enroll Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. INTERACTIVE PRACTICE ROI CALCULATOR -->
+  <section id="practice-roi" class="py-20 bg-slate-900 text-white relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-bold tracking-wider uppercase text-yellow-300 bg-yellow-400/10 px-3 py-1 rounded-full">
+          Financial Impact Modeler
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">
+          Calculate Your Practice ROI
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Estimate conservative monthly revenue recovered from unbilled restorative findings and assistant operatory hours saved.
+        </p>
+      </div>
+
+      <!-- Calculator Card -->
+      <div class="bg-[#121D3F] border border-slate-700 rounded-2xl p-6 sm:p-10 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Sliders -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <div class="flex justify-between items-center text-sm font-semibold mb-2">
+                <span class="text-slate-200">Active Operatory Chairs</span>
+                <span id="chairsDisplay" class="font-mono text-yellow-300 text-base font-bold">4 Chairs</span>
+              </div>
+              <input id="chairsSlider" type="range" min="1" max="25" value="4" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#FDE047]">
+            </div>
+
+            <div>
+              <div class="flex justify-between items-center text-sm font-semibold mb-2">
+                <span class="text-slate-200">Monthly Patient Exams</span>
+                <span id="patientsDisplay" class="font-mono text-yellow-300 text-base font-bold">350 Patients</span>
+              </div>
+              <input id="patientsSlider" type="range" min="100" max="2500" step="50" value="350" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-[#FDE047]">
+            </div>
+
+            <div class="pt-3 text-xs text-slate-400 space-y-1">
+              <p>• Based on average unbilled early interproximal caries rate ($185 restorative fee).</p>
+              <p>• Reflects 42 minutes saved daily per chair in charting and narrative prep.</p>
+            </div>
+          </div>
+
+          <!-- Result Display Box -->
+          <div class="lg:col-span-5 bg-[#0B132B] border border-slate-700/80 p-6 rounded-xl text-center space-y-4">
+            <span class="text-xs uppercase font-mono tracking-wider text-slate-400">Estimated Annual Practice Gain</span>
+            
+            <div id="annualGainDisplay" class="text-4xl sm:text-5xl font-extrabold font-mono text-[#FDE047]">
+              $147,200
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 pt-2 text-xs border-t border-slate-800 text-slate-300">
+              <div>
+                <span class="text-slate-400 block">Monthly Added Rev</span>
+                <span id="monthlyRevDisplay" class="font-mono font-bold text-white text-sm">$12,267</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block">Staff Hours Saved</span>
+                <span id="hoursSavedDisplay" class="font-mono font-bold text-white text-sm">62 hrs / mo</span>
+              </div>
+            </div>
+
+            <button onclick="openDemoModal('ROI Model Walkthrough')" class="w-full py-3 rounded-lg font-bold text-sm bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] shadow-md transition-all">
+              Request Practice ROI Report ->
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+  <section id="faq" class="py-20 lg:py-28 bg-[#FAFAFB]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold tracking-wider uppercase text-blue-900 bg-blue-100 px-3 py-1 rounded-full">
+          Frequently Asked Questions
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0B132B] mt-4">
+          Everything Clinicians & DSOs Ask
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="bg-white border border-slate-200 custom-card-radius overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(1)" class="w-full px-6 py-5 text-left font-bold text-base text-[#0B132B] flex items-center justify-between hover:bg-slate-50 transition-colors">
+            <span>How does DentVision connect with our existing dental imaging software?</span>
+            <span id="faqIcon-1" class="text-xl text-slate-500 font-mono transition-transform">&plus;</span>
+          </button>
+          <div id="faqContent-1" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            DentVision deploys as a lightweight background bridge compatible with Dexis, Carestream, Sidexis, Planmeca Romexis, Apteryx, and Eaglesoft. As soon as a sensor or phosphor plate is scanned, the image is parsed via local encrypted tunnel and overlays appear in less than 1.2 seconds.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white border border-slate-200 custom-card-radius overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(2)" class="w-full px-6 py-5 text-left font-bold text-base text-[#0B132B] flex items-center justify-between hover:bg-slate-50 transition-colors">
+            <span>Are DentPulse Academy courses accredited for ADA CERP and AGD PACE credits?</span>
+            <span id="faqIcon-2" class="text-xl text-slate-500 font-mono transition-transform">&plus;</span>
+          </button>
+          <div id="faqContent-2" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes. DentPulse Academy is an officially recognized ADA CERP provider and AGD PACE accepted national sponsor. All credits satisfy state dental board requirements for diagnostic radiology, emergent technologies, and clinical documentation.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white border border-slate-200 custom-card-radius overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(3)" class="w-full px-6 py-5 text-left font-bold text-base text-[#0B132B] flex items-center justify-between hover:bg-slate-50 transition-colors">
+            <span>Is patient data HIPAA compliant and encrypted?</span>
+            <span id="faqIcon-3" class="text-xl text-slate-500 font-mono transition-transform">&plus;</span>
+          </button>
+          <div id="faqContent-3" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Yes, fully SOC2 Type II certified and HIPAA compliant. All imaging and voice data is de-identified on the edge before cryptographic transport (TLS 1.3, AES-256). We never train open public models on your proprietary patient PHI.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white border border-slate-200 custom-card-radius overflow-hidden shadow-sm">
+          <button onclick="toggleFaq(4)" class="w-full px-6 py-5 text-left font-bold text-base text-[#0B132B] flex items-center justify-between hover:bg-slate-50 transition-colors">
+            <span>How fast can a 4 to 10 operatory clinic get installed?</span>
+            <span id="faqIcon-4" class="text-xl text-slate-500 font-mono transition-transform">&plus;</span>
+          </button>
+          <div id="faqContent-4" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Setup requires zero hardware changes. Our integration team conducts a 45-minute remote installation and staff onboarding session, with live AI triage operational that same afternoon.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer class="bg-[#0B132B] text-slate-400 py-16 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+        
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-yellow-400 flex items-center justify-center text-[#0B132B] font-bold">
+              DP
+            </div>
+            <span class="text-lg font-bold text-white tracking-tight">DentPulse Academy</span>
+          </div>
+          <p class="text-slate-400 text-xs max-w-sm leading-relaxed">
+            The standard in healthcare & dental intelligence. Accelerating radiographic precision, automating operatory documentation, and fostering next-generation clinician leadership.
+          </p>
+          <div class="text-[11px] text-slate-500">
+            ADA CERP Recognized Provider · HIPAA & SOC2 Type II Certified · FDA 510(k) Cleared Algorithms
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Clinical Solutions</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#clinical-solutions" class="hover:text-yellow-300">DentVision Radiology AI</a></li>
+            <li><a href="#clinical-solutions" class="hover:text-yellow-300">DentFlow Operatory AI</a></li>
+            <li><a href="#clinical-solutions" class="hover:text-yellow-300">CephaloMetric-AI Suite</a></li>
+            <li><a href="#raas-platform" class="hover:text-yellow-300">RaaS Enterprise Hub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Academy & Practice</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#academy-ce" class="hover:text-yellow-300">CE Course Catalog</a></li>
+            <li><a href="#practice-roi" class="hover:text-yellow-300">Practice ROI Modeler</a></li>
+            <li><a href="#faq" class="hover:text-yellow-300">Technical FAQ</a></li>
+            <li><a href="javascript:void(0)" onclick="openDemoModal()" class="text-yellow-300 font-bold hover:underline">Schedule Practice Demo</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>&copy; 2026 DentPulse Health Technologies Inc. All rights reserved.</div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400">HIPAA BAA Agreement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 9. FLOATING AI CHATBOT WIDGET (CRITICAL REQUIREMENT) -->
+  <!-- Circular Button Fixed at Bottom Right -->
+  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 50;">
+    <button 
+      id="chatbotFloatingBtn"
+      onclick="toggleChatbot()"
+      aria-label="Open DentPulse Clinical AI Assistant"
+      class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] shadow-float hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center cursor-pointer glow-yellow border-2 border-slate-900 group"
+    >
+      <!-- Chat Icon -->
+      <svg id="chatIconOpen" class="w-7 h-7 sm:w-8 sm:h-8 transition-transform group-hover:rotate-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.477 2 2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.636-.827A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+      </svg>
+      <!-- Close Icon (Hidden initially) -->
+      <svg id="chatIconClose" class="w-7 h-7 sm:w-8 sm:h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Interactive Chat Dialog Window -->
+  <div 
+    id="chatWindow" 
+    class="hidden fixed bottom-24 right-4 sm:right-6 w-[calc(100vw-32px)] sm:w-[380px] h-[520px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300"
+    style="z-index: 50;"
+  >
+    <!-- Header -->
+    <div class="bg-[#0B132B] p-4 text-white flex items-center justify-between border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <div class="relative">
+          <div class="w-9 h-9 rounded-full bg-yellow-400 text-[#0B132B] flex items-center justify-center font-bold text-sm">
+            AI
+          </div>
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#0B132B]"></span>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white">DentPulse Clinical AI</h4>
+          <p class="text-[11px] text-yellow-300">Dental Intelligence Assistant</p>
+        </div>
+      </div>
+      <button onclick="toggleChatbot()" class="text-slate-400 hover:text-white p-1 rounded-lg">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Messages Container -->
+    <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-slate-50 text-xs">
+      <!-- AI Welcome message -->
+      <div class="flex items-start gap-2">
+        <div class="w-6 h-6 rounded-full bg-yellow-400 text-[#0B132B] font-bold text-[10px] flex items-center justify-center shrink-0">
+          DP
+        </div>
+        <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-slate-800 shadow-xs max-w-[85%] leading-relaxed">
+          Hello Doctor! I am your DentPulse Academy clinical assistant. How can I assist your practice today with radiology AI, operatory voice, or CE accreditation?
+        </div>
+      </div>
+
+      <!-- Quick prompts buttons -->
+      <div class="pt-2 flex flex-wrap gap-1.5">
+        <button onclick="sendQuickPrompt('Does DentVision integrate with Dexis and Eaglesoft?')" class="text-[11px] bg-slate-200/80 hover:bg-yellow-200 text-slate-800 px-2.5 py-1 rounded-full text-left transition-colors">
+          • Dexis/Eaglesoft integration?
+        </button>
+        <button onclick="sendQuickPrompt('What is the practice ROI for a 4-chair clinic?')" class="text-[11px] bg-slate-200/80 hover:bg-yellow-200 text-slate-800 px-2.5 py-1 rounded-full text-left transition-colors">
+          • 4-chair clinic ROI?
+        </button>
+        <button onclick="sendQuickPrompt('How do I earn ADA CERP CE credits?')" class="text-[11px] bg-slate-200/80 hover:bg-yellow-200 text-slate-800 px-2.5 py-1 rounded-full text-left transition-colors">
+          • ADA CERP credits?
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Input Area -->
+    <form id="chatForm" onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-slate-200 flex items-center gap-2">
+      <input 
+        id="chatInput" 
+        type="text" 
+        placeholder="Ask a clinical or software question..." 
+        class="flex-1 px-3 py-2 bg-slate-100 rounded-lg text-xs focus:outline-none focus:ring-2 focus:ring-yellow-400 text-slate-800"
+      />
+      <button 
+        type="submit" 
+        class="p-2 rounded-lg bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] font-bold transition-colors shrink-0"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- 10. BOOK DEMO MODAL DIALOG -->
+  <div id="demoModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/75 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative">
+      <button onclick="closeDemoModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 p-1">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-xs font-mono font-bold text-blue-900 bg-blue-100 px-2.5 py-0.5 rounded">Academy & Software VIP Demo</span>
+        <h3 id="modalTitle" class="text-2xl font-bold text-[#0B132B] mt-2">Book Your Practice Demonstration</h3>
+        <p class="text-xs text-slate-600 mt-1">Get custom access to the DentVision AI sandbox and practice ROI model.</p>
+      </div>
+
+      <form id="demoForm" onsubmit="handleDemoSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Clinician / Practice Name *</label>
+          <input required type="text" placeholder="Dr. Jane Smith, DDS" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-slate-800">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Work Email *</label>
+            <input required type="email" placeholder="doctor@clinic.com" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-slate-800">
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Phone Number</label>
+            <input type="tel" placeholder="(555) 000-0000" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-slate-800">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Practice Configuration</label>
+          <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-400 text-slate-800">
+            <option>Solo Practice (1 - 3 Operatories)</option>
+            <option selected>Group Practice (4 - 10 Operatories)</option>
+            <option>Multi-Location DSO (11+ Operatories)</option>
+            <option>Orthodontic / Specialty Clinic</option>
+          </select>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 rounded-xl font-bold text-sm bg-[#FDE047] hover:bg-[#EAB308] text-[#0B132B] shadow-md transition-all">
+            Confirm Demo & Request Clinical Access ->
+          </button>
+        </div>
+
+        <div id="demoSuccessMessage" class="hidden p-3 bg-emerald-50 text-emerald-800 border border-emerald-300 rounded-lg text-center font-medium">
+          🎉 Demo request submitted! Our clinical intelligence specialist will contact you within 2 hours.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 11. VANILLA JS LOGIC -->
+  <script>
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile nav on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // Interactive AI Simulator Toggle
+    const toggleAiScanBtn = document.getElementById('toggleAiScanBtn');
+    const aiOverlayLayer = document.getElementById('aiOverlayLayer');
+    const aiScanStatus = document.getElementById('aiScanStatus');
+    let aiLayerVisible = true;
+
+    toggleAiScanBtn.addEventListener('click', () => {
+      aiLayerVisible = !aiLayerVisible;
+      if (aiLayerVisible) {
+        aiOverlayLayer.style.opacity = '1';
+        aiScanStatus.innerText = 'AI Active · 3 Findings Flagged';
+        aiScanStatus.className = 'text-emerald-400 font-bold';
+        toggleAiScanBtn.innerText = 'Hide AI Layer';
+      } else {
+        aiOverlayLayer.style.opacity = '0';
+        aiScanStatus.innerText = 'Raw Radiograph (AI Off)';
+        aiScanStatus.className = 'text-slate-400';
+        toggleAiScanBtn.innerText = 'Show AI Layer';
+      }
+    });
+
+    // Practice ROI Modeler Sliders
+    const chairsSlider = document.getElementById('chairsSlider');
+    const patientsSlider = document.getElementById('patientsSlider');
+    const chairsDisplay = document.getElementById('chairsDisplay');
+    const patientsDisplay = document.getElementById('patientsDisplay');
+    const annualGainDisplay = document.getElementById('annualGainDisplay');
+    const monthlyRevDisplay = document.getElementById('monthlyRevDisplay');
+    const hoursSavedDisplay = document.getElementById('hoursSavedDisplay');
+
+    function calculateROI() {
+      const chairs = parseInt(chairsSlider.value, 10);
+      const patients = parseInt(patientsSlider.value, 10);
+      
+      chairsDisplay.innerText = `${chairs} Chairs`;
+      patientsDisplay.innerText = `${patients} Patients`;
+
+      // Calculation logic:
+      // ~8% additional early diagnostic detection confirmed = patients * 0.08 * $185
+      // Staff time saved = chairs * 42 mins/day * 22 days/mo
+      const recoveredPerMonth = Math.round(patients * 0.08 * 185 + (chairs * 850));
+      const annualGain = recoveredPerMonth * 12;
+      const hoursSavedMonth = Math.round((chairs * 42 * 22) / 60);
+
+      annualGainDisplay.innerText = `$${annualGain.toLocaleString()}`;
+      monthlyRevDisplay.innerText = `$${recoveredPerMonth.toLocaleString()}`;
+      hoursSavedDisplay.innerText = `${hoursSavedMonth} hrs / mo`;
+    }
+
+    chairsSlider.addEventListener('input', calculateROI);
+    patientsSlider.addEventListener('input', calculateROI);
+
+    // FAQ Accordion
+    function toggleFaq(num) {
+      const content = document.getElementById(`faqContent-${num}`);
+      const icon = document.getElementById(`faqIcon-${num}`);
+      const isHidden = content.classList.contains('hidden');
+      
+      // Close all
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`faqContent-${i}`).classList.add('hidden');
+        document.getElementById(`faqIcon-${i}`).innerHTML = '&plus;';
+      }
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.innerHTML = '&minus;';
+      }
+    }
+
+    // Floating Chatbot Interaction
+    const chatWindow = document.getElementById('chatWindow');
+    const chatIconOpen = document.getElementById('chatIconOpen');
+    const chatIconClose = document.getElementById('chatIconClose');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+
+    function toggleChatbot() {
+      const isOpen = !chatWindow.classList.contains('hidden');
+      if (isOpen) {
+        chatWindow.classList.add('hidden');
+        chatIconOpen.classList.remove('hidden');
+        chatIconClose.classList.add('hidden');
+      } else {
+        chatWindow.classList.remove('hidden');
+        chatIconOpen.classList.add('hidden');
+        chatIconClose.classList.remove('hidden');
+        chatInput.focus();
+      }
+    }
+
+    function addMessage(sender, text) {
+      const div = document.createElement('div');
+      div.className = sender === 'user' ? 'flex justify-end' : 'flex items-start gap-2';
+
+      if (sender === 'user') {
+        div.innerHTML = `
+          <div class="bg-[#0B132B] text-white p-3 rounded-2xl rounded-tr-none text-xs max-w-[85%] shadow-xs leading-relaxed">
+            ${text}
+          </div>
+        `;
+      } else {
+        div.innerHTML = `
+          <div class="w-6 h-6 rounded-full bg-yellow-400 text-[#0B132B] font-bold text-[10px] flex items-center justify-center shrink-0">
+            DP
+          </div>
+          <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 text-slate-800 shadow-xs max-w-[85%] leading-relaxed">
+            ${text}
+          </div>
+        `;
+      }
+      chatMessages.appendChild(div);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function generateAiResponse(query) {
+      const lower = query.toLowerCase();
+      if (lower.includes('dexis') || lower.includes('eaglesoft') || lower.includes('integrate') || lower.includes('pacs')) {
+        return "DentVision features direct DICOM/PACS plug-ins for Dexis, Eaglesoft, Carestream, Planmeca, and Sidexis. Triage overlays appear seamlessly in under 1.2s without changing your sensor hardware!";
+      } else if (lower.includes('roi') || lower.includes('chair') || lower.includes('revenue')) {
+        return "A typical 4-chair practice recovers approximately $147,200 annually from undetected interproximal caries and recovers 62 staff hours per month with ambient voice charting.";
+      } else if (lower.includes('ce') || lower.includes('ada') || lower.includes('cerp') || lower.includes('credit')) {
+        return "DentPulse Academy is an ADA CERP recognized provider and AGD PACE accepted. Courses provide 6 to 18 CE credits and are fully accepted for state license renewals.";
+      } else if (lower.includes('demo') || lower.includes('book') || lower.includes('trial')) {
+        return "We would love to show you a live clinical demo! Click the yellow 'Book Demo' button on the navbar or right here in the dialog to schedule a sandbox walk-through.";
+      } else {
+        return "Thank you for asking! DentPulse Academy blends real-time radiology diagnostics with hands-on CE accreditation. Would you like to schedule a 15-minute practice demo or test our diagnostic simulator?";
+      }
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const query = chatInput.value.trim();
+      if (!query) return;
+
+      addMessage('user', query);
+      chatInput.value = '';
+
+      // Simulated smart response
+      setTimeout(() => {
+        const response = generateAiResponse(query);
+        addMessage('bot', response);
+      }, 500);
+    }
+
+    function sendQuickPrompt(promptText) {
+      addMessage('user', promptText);
+      setTimeout(() => {
+        const response = generateAiResponse(promptText);
+        addMessage('bot', response);
+      }, 500);
+    }
+
+    // Demo Modal Handlers
+    const demoModal = document.getElementById('demoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const demoSuccessMessage = document.getElementById('demoSuccessMessage');
+
+    function openDemoModal(customSubject) {
+      if (customSubject) {
+        modalTitle.innerText = `Book Demo: ${customSubject}`;
+      } else {
+        modalTitle.innerText = "Book Your Practice Demonstration";
+      }
+      demoModal.classList.remove('hidden');
+      demoSuccessMessage.classList.add('hidden');
+    }
+
+    function closeDemoModal() {
+      demoModal.classList.add('hidden');
+    }
+
+    function handleDemoSubmit(e) {
+      e.preventDefault();
+      demoSuccessMessage.classList.remove('hidden');
+      setTimeout(() => {
+        closeDemoModal();
+      }, 2500);
+    }
+
+    // Close modal on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDemoModal();
+    });
+  </script>
+</body>
+</html>

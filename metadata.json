@@ -1,0 +1,6 @@
+{
+  "name": "DentPulse Academy",
+  "description": "Healthcare & Dental Intelligence Academy empowering clinicians with AI radiology, operatory automation, and accredited CE courses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
